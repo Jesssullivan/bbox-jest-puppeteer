@@ -1,0 +1,30 @@
+#!/bin/bash
+
+source "tests.env"
+
+echo -e "${PREFIX}  ...starting annotator..."
+
+if ! [ -d ${LOG} ]; then
+  echo -e "${PREFIX}  ...Adding ${LOG} directory..."
+  mkdir ${LOG}
+fi
+
+if [ -f ${COMPOSE} ]; then
+  echo -e "${PREFIX}  ...Refreshing ${COMPOSE} log file..."
+  rm ${COMPOSE}
+  touch ${COMPOSE}
+else
+    echo -e "${PREFIX}  ...Adding ${COMPOSE} log file..."
+    touch ${COMPOSE}
+fi
+
+
+echo -e "${PREFIX}  ...Launching annotator..."
+
+python3 app/app.py &
+
+PID=$!
+
+echo -e "${PREFIX}  ...Launched annotator!  \n\n  ~~ annotator is running as process ${PID} ~~ \n"
+
+exit 0
