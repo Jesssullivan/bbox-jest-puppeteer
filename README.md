@@ -1,7 +1,7 @@
 
-## *Jest + Puppeteer environment for web UI evaluation*
+## Jest + Puppeteer environment for web UI evaluation
 
-#### take a look through `./bench/environment/` to see how this works, a work in progress!
+#### *take a look through `./bench/environment/` to see how this works, a work in progress!*
 
 | ***Demo:*** |
 |---|
